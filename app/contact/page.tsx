@@ -1,37 +1,60 @@
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/contact-form";
+import { ButtonLink } from "@/components/button-link";
 import { PageIntro } from "@/components/page-intro";
 import { PageShell } from "@/components/page-shell";
-import { contactEmail, portalUrl } from "@/lib/site";
+import { portalUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact — ICONUS",
-  description: "Send a note to ICONUS about a kit, a panel, or bringing testing to your practice.",
+  description: "Patient questions, provider orders, kit registration, and GenoGPO.",
 };
+
+const paths = [
+  {
+    title: "Patients",
+    body: "Questions about a kit, a panel, or results.",
+    href: "/contact/patients",
+    label: "Patient contact",
+  },
+  {
+    title: "Providers",
+    body: "Ask about bulk kits or a white-label version.",
+    href: "/contact/providers",
+    label: "Provider contact",
+  },
+  {
+    title: "Portal",
+    body: "Register a kit or sign in at my.iconus.org.",
+    href: portalUrl,
+    label: "Register or sign in",
+  },
+  {
+    title: "GenoGPO",
+    body: "Practices order through the group purchasing organization.",
+    href: "/gpo",
+    label: "Go to GenoGPO",
+  },
+];
 
 export default function ContactPage() {
   return (
     <PageShell>
-      <PageIntro eyebrow="Contact" title="Send a note.">
-        Ask about a panel, a kit, or bringing ICONUS to your practice. For results, sign in to the
-        portal.
+      <PageIntro eyebrow="Contact" title="How can we help?">
+        Choose the path that matches your question.
       </PageIntro>
-      <section className="grid gap-16 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_280px] lg:px-16 lg:py-24">
-        <ContactForm />
-        <aside className="flex flex-col gap-8 border-t border-line pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
-          <div>
-            <p className="font-mono text-sm text-gold uppercase">Email</p>
-            <a href={`mailto:${contactEmail}`} className="mt-3 block text-lg font-light hover:text-gold">
-              {contactEmail}
-            </a>
-          </div>
-          <div>
-            <p className="font-mono text-sm text-gold uppercase">Portal</p>
-            <a href={portalUrl} className="mt-3 block text-lg font-light hover:text-gold">
-              my.iconus.org
-            </a>
-          </div>
-        </aside>
+      <section className="grid gap-8 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:px-16 lg:py-24">
+        {paths.map((path) => (
+          <article
+            key={path.title}
+            className="flex flex-col items-start gap-6 border-t border-line pt-8"
+          >
+            <h2 className="text-[32px] leading-none font-medium">{path.title}</h2>
+            <p className="text-lg leading-[1.6] font-light text-ink sm:text-2xl">{path.body}</p>
+            <ButtonLink href={path.href} variant={path.href.startsWith("http") ? "outline" : "teal"}>
+              {path.label}
+            </ButtonLink>
+          </article>
+        ))}
       </section>
     </PageShell>
   );

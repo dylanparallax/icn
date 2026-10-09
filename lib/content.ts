@@ -49,30 +49,18 @@ export const panels = [
   },
 ] as const;
 
-export const markers = [
-  { src: "/brand/marker-1.svg", width: 21, height: 26 },
-  { src: "/brand/marker-2.svg", width: 26, height: 26 },
-  { src: "/brand/marker-3.svg", width: 26, height: 25 },
-  { src: "/brand/marker-4.svg", width: 22, height: 20 },
-  { src: "/brand/marker-5.svg", width: 24, height: 24 },
-  { src: "/brand/marker-6.svg", width: 21, height: 18 },
-  { src: "/brand/marker-7.svg", width: 28, height: 30 },
-  { src: "/brand/marker-8.svg", width: 25, height: 25 },
-  { src: "/brand/marker-9.svg", width: 25, height: 24 },
-] as const;
-
 export const principles = [
   {
     title: "Biology, not averages.",
-    body: "Explore the genetic traits that may relate to a person’s health and wellness priorities.",
+    body: "A cheek swab looks at genetic traits that may relate to a person’s health and wellness priorities.",
   },
   {
     title: "Goals, not guesswork.",
-    body: "Choose a focused test panel around the questions you and your provider want to explore.",
+    body: "Each panel stays focused on the questions a patient and provider want to explore.",
   },
   {
     title: "A conversation, not a conclusion.",
-    body: "Bring genetic insight into a shared discussion about the next steps in your plan.",
+    body: "Results return in about 3–4 weeks, ready for a shared discussion about next steps.",
   },
 ] as const;
 

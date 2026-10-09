@@ -17,22 +17,25 @@ const columns = [
       { href: "/quiz", label: "Take the quiz" },
       { href: "/providers", label: "For providers" },
       { href: "/get-started", label: "Get started" },
-      { href: portalUrl, label: "Portal login", external: true },
+      { href: portalUrl, label: "Register a kit" },
+      { href: portalUrl, label: "Portal login" },
     ],
   },
   {
     title: "Social",
     links: [
-      { href: "https://www.instagram.com", label: "Instagram", external: true },
-      { href: "https://www.linkedin.com", label: "LinkedIn", external: true },
-      { href: "https://x.com", label: "X", external: true },
+      { href: "https://www.instagram.com", label: "Instagram", newTab: true },
+      { href: "https://www.linkedin.com", label: "LinkedIn", newTab: true },
+      { href: "https://x.com", label: "X", newTab: true },
     ],
   },
   {
     title: "Help",
     links: [
       { href: "/faq", label: "FAQ" },
-      { href: "/contact", label: "Contact" },
+      { href: "/contact/patients", label: "Patient contact" },
+      { href: "/contact/providers", label: "Provider contact" },
+      { href: "/gpo", label: "GenoGPO" },
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
     ],
@@ -53,12 +56,13 @@ export function SiteFooter() {
             <ul className="flex flex-col gap-4">
               {column.links.map((link) => (
                 <li key={link.label}>
-                  {"external" in link && link.external ? (
+                  {link.href.startsWith("http") ? (
                     <a
                       href={link.href}
                       className="text-sm leading-[1.6] font-light hover:text-gold"
-                      target="_blank"
-                      rel="noreferrer"
+                      {...("newTab" in link && link.newTab
+                        ? { target: "_blank", rel: "noreferrer" }
+                        : {})}
                     >
                       {link.label}
                     </a>
