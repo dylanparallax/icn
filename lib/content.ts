@@ -180,8 +180,11 @@ export const moreQuestions = [
 
 export const essentials = [
   "Simple at-home cheek swab",
-  "Panels chosen around your goals",
-  "Results for you and your provider",
+  "Panels chosen around specific goals",
+  "Results for patient and provider",
+  "Kits shipped directly",
+  "Results in about 3–4 weeks",
+  "Reviewed in a follow-up visit",
 ] as const;
 
 export type PanelSlug = (typeof panels)[number]["slug"];

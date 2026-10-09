@@ -27,3 +27,26 @@ body {
   outline: 2px solid var(--color-teal);
   outline-offset: 3px;
 }
+
+@keyframes essentials-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.essentials-marquee {
+  animation: essentials-marquee 90s linear infinite;
+}
+
+.essentials-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .essentials-marquee {
+    animation: none;
+  }
+}
