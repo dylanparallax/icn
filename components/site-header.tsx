@@ -17,7 +17,7 @@ export function SiteHeader() {
 
   return (
     <header className="px-5 sm:px-8 lg:px-16">
-      <div className="flex h-[80px] items-center justify-between gap-6">
+      <div className="flex h-[100px] items-center justify-between gap-6 py-10">
         <Link href="/" aria-label="ICONUS home">
           <Image
             src="/brand/wordmark.png"
