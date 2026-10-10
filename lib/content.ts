@@ -68,17 +68,17 @@ export const steps = [
   {
     number: "01",
     title: "Kits shipped direct to patient",
-    body: "Choose a panel with your provider. Your ICONUS kit comes directly to you.",
+    body: "Choose a panel. Your ICONUS kit comes directly to you.",
   },
   {
     number: "02",
     title: "Patient swabs cheek, mails back with prepaid return mailer",
-    body: "Complete your cheek swab at home, then use the prepaid return mailer to send it back.",
+    body: "Complete cheek swab at home, then use the prepaid return mailer to send it back.",
   },
   {
     number: "03",
     title: "Results delivered to patient portal & provider portal",
-    body: "Results are available in about 3–4 weeks, ready to review together with your provider.",
+    body: "Results are available in about 3–4 weeks.",
   },
 ] as const;
 

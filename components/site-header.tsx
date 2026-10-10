@@ -8,7 +8,7 @@ import { portalUrl } from "@/lib/site";
 
 const links = [
   { href: "/#how-it-works", label: "How it works" },
-  { href: "/#panels", label: "Test panels" },
+  { href: "/#panels", label: "Shop" },
   { href: "/providers", label: "For providers" },
 ];
 
@@ -17,18 +17,18 @@ export function SiteHeader() {
 
   return (
     <header className="px-5 sm:px-8 lg:px-16">
-      <div className="flex h-[100px] items-center justify-between gap-6">
+      <div className="flex h-[80px] items-center justify-between gap-6">
         <Link href="/" aria-label="ICONUS home">
           <Image
             src="/brand/wordmark.png"
             alt="ICONUS"
-            width={170}
-            height={46}
+            width={100}
+            height={30}
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-14 lg:flex" aria-label="Primary">
           <ul className="flex items-center gap-8 font-mono text-sm text-cream uppercase">
             {links.map((link) => (
               <li key={link.href}>
@@ -40,7 +40,7 @@ export function SiteHeader() {
           </ul>
           <div className="flex items-center gap-7">
             <ButtonLink href={portalUrl} variant="login">
-              Portal login
+              Log in
             </ButtonLink>
             <ButtonLink href="/get-started">Get started</ButtonLink>
           </div>
@@ -70,7 +70,7 @@ export function SiteHeader() {
           </ul>
           <div className="flex flex-col items-start gap-4">
             <ButtonLink href={portalUrl} variant="login">
-              Portal login
+              ogin
             </ButtonLink>
             <ButtonLink href="/get-started">Get started</ButtonLink>
           </div>
